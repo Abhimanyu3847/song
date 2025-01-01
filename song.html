@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4a90e2, #50e3c2);
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background: #fff;
+            color: #000;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tab.active {
+            background: #50e3c2;
+            color: #fff;
+        }
+        .song-list {
+            display: none;
+        }
+        .song-list.active {
+            display: block;
+        }
+        .song {
+            margin: 10px 0;
+        }
+        audio {
+            width: 100%;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Music Player</h1>
+        <div class="tabs">
+            <div class="tab" data-group="english">English</div>
+            <div class="tab" data-group="nepali">Nepali</div>
+            <div class="tab" data-group="others">Others</div>
+        </div>
+        <div id="english" class="song-list">
+            <div class="song">
+                <p>English Song 1</p>
+                <audio controls src="songs/english1.mp3"></audio>
+            </div>
+            <!-- Repeat for other English songs -->
+        </div>
+        <div id="nepali" class="song-list">
+            <div class="song">
+                <p>Nepali Song 1</p>
+                <audio controls src="songs/nepali1.mp3"></audio>
+            </div>
+            <!-- Repeat for other Nepali songs -->
+        </div>
+        <div id="others" class="song-list">
+            <div class="song">
+                <p>Other Song 1</p>
+                <audio controls src="songs/others1.mp3"></audio>
+            </div>
+            <!-- Repeat for other songs -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab');
+            const songLists = document.querySelectorAll('.song-list');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const group = tab.getAttribute('data-group');
+                    songLists.forEach(list => {
+                        list.classList.toggle('active', list.id === group);
+                    });
+                });
+            });
+
+            // Activate the first tab by default
+            tabs[0].click();
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4a90e2, #50e3c2);
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background: #fff;
+            color: #000;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tab.active {
+            background: #50e3c2;
+            color: #fff;
+        }
+        .song-list {
+            display: none;
+        }
+        .song-list.active {
+            display: block;
+        }
+        .song {
+            margin: 10px 0;
+        }
+        audio {
+            width: 100%;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Music Player</h1>
+        <div class="tabs">
+            <div class="tab" data-group="english">English</div>
+            <div class="tab" data-group="nepali">Nepali</div>
+            <div class="tab" data-group="others">Others</div>
+        </div>
+        <div id="english" class="song-list">
+            <div class="song">
+                <p>English Song 1</p>
+                <audio controls src="songs/english1.mp3"></audio>
+            </div>
+<div class="song">
+                <p>English Song 2</p>
+                <audio controls src="songs/english2.mp3"></audio>
+            </div>
+<div class="song">
+                <p>English Song 3</p>
+                <audio controls src="songs/english3.mp3"></audio>
+            </div>
+<div class="song">
+                <p>English Song 4</p>
+                <audio controls src="songs/english4.mp3"></audio>
+            </div>
+
+            <!-- Repeat for other English songs -->
+        </div>
+        <div id="nepali" class="song-list">
+            <div class="song">
+                <p>BAGAICHA <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -KTA HARU</p>
+                <audio controls src="songs/nepali1.mp3"></audio>
+            </div>
+<div class="song">
+                <p>CHIYA BARIMA <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp-THE AXE</p>
+                <audio controls src="songs/nepali2.mp3"></audio>
+            </div>
+<div class="song">
+                <p>HUKKA MERO <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp-KARMA BAND</p>
+                <audio controls src="songs/nepali3.mp3"></audio>
+            </div>
+<div class="song">
+                <p>MERO AASU <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -EDGE BAND</p>
+                <audio controls src="songs/nepali4.mp3"></audio>
+            </div>
+
+            <!-- Repeat for other Nepali songs -->
+        </div>
+        <div id="others" class="song-list">
+            <div class="song">
+                <p>Other Song 1</p>
+                <audio controls src="songs/others1.mp3"></audio>
+            </div>
+            <!-- Repeat for other songs -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab');
+            const songLists = document.querySelectorAll('.song-list');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const group = tab.getAttribute('data-group');
+                    songLists.forEach(list => {
+                        list.classList.toggle('active', list.id === group);
+                    });
+                });
+            });
+
+            // Activate the first tab by default
+            tabs[0].click();
+        });
+    </script>
+</body>
+</html>
